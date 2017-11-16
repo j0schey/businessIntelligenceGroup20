@@ -1,17 +1,17 @@
 <Schema name="bike_sales">
-  <Dimension type="TimeDimension" visible="true" name="Date">
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Date">
     <Hierarchy name="Days" visible="true" hasAll="true" primaryKey="Date">
-      <Table name="dm_time" alias="">
+      <Table name="dm_time">
       </Table>
-      <Level name="Year" visible="true" column="CalendarYear" uniqueMembers="true" levelType="TimeYears">
+      <Level name="Year" visible="true" column="CalendarYear" type="String" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
       </Level>
-      <Level name="Month" visible="true" column="MonthNumberOfYear" uniqueMembers="false" levelType="TimeMonths" captionColumn="MonthNumberOfYear">
+      <Level name="Month" visible="true" column="MonthNumberOfYear" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" captionColumn="MonthNumberOfYear">
       </Level>
-      <Level name="Day" visible="true" column="DayNumberOfMonth" uniqueMembers="false" levelType="TimeDays">
+      <Level name="Day" visible="true" column="DayNumberOfMonth" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="StandardDimension" visible="true" name="Location">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Location">
     <Hierarchy name="Areas" visible="true" hasAll="true" primaryKey="AddressID">
       <Table name="dm_location">
       </Table>
@@ -23,9 +23,9 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="StandardDimension" visible="true" name="Product">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product">
     <Hierarchy name="ProductCategory" visible="true" hasAll="true" primaryKey="ProductID">
-      <Table name="dm_product" alias="">
+      <Table name="dm_product">
       </Table>
       <Level name="TopCategory" visible="true" column="ProductTopCategory" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -33,52 +33,52 @@
       </Level>
     </Hierarchy>
     <Hierarchy name="Name" visible="true" hasAll="true" primaryKey="ProductID">
-      <Table name="dm_product" alias="">
+      <Table name="dm_product">
       </Table>
-      <Level name="Name" visible="true" column="ProductID" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="Name">
+      <Level name="Name" visible="true" column="Name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="Name">
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="StandardDimension" visible="true" name="Customer">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Customer">
     <Hierarchy name="Age" visible="true" hasAll="true" primaryKey="CustomerID">
-      <Table name="dm_customer" alias="">
+      <Table name="dm_customer">
       </Table>
-      <Level name="Age" visible="true" column="Age" uniqueMembers="false" hideMemberIf="Never">
+      <Level name="Age" visible="true" column="Age" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
     <Hierarchy name="Gender" visible="true" hasAll="true" primaryKey="CustomerID">
-      <Table name="dm_customer" alias="">
+      <Table name="dm_customer">
       </Table>
-      <Level name="Gender" visible="true" column="Gender" type="String" uniqueMembers="false">
+      <Level name="Gender" visible="true" column="Gender" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Name" visible="true" hasAll="true">
-      <Table name="dm_customer" alias="">
+    <Hierarchy name="Name" visible="true" hasAll="true" primaryKey="CustomerID">
+      <Table name="dm_customer">
       </Table>
-      <Level name="Name" visible="true" table="dm_customer" column="Name" type="String" uniqueMembers="false">
+      <Level name="Name" visible="true" table="dm_customer" column="Name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
   <Cube name="bike_sales" visible="true" cache="true" enabled="true">
     <Table name="dm_factsales">
     </Table>
-    <DimensionUsage source="Customer" name="Customer" visible="true" foreignKey="CustomerID">
+    <DimensionUsage source="Customer" name="Customer" visible="true" foreignKey="CustomerID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="ProductID">
+    <DimensionUsage source="Product" name="Product" visible="true" foreignKey="ProductID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Location" name="ShippedTo" visible="true" foreignKey="ShipToAddressID">
+    <DimensionUsage source="Location" name="ShippedTo" visible="true" foreignKey="ShipToAddressID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Location" name="BilledTo" visible="true" foreignKey="BillToAddressID">
+    <DimensionUsage source="Location" name="BilledTo" visible="true" foreignKey="BillToAddressID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Date" name="ShipDate" visible="true" foreignKey="ShipToAddressID">
+    <DimensionUsage source="Date" name="ShipDate" visible="true" foreignKey="ShipToAddressID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="Date" name="OrderDate" visible="true" foreignKey="OrderDate">
+    <DimensionUsage source="Date" name="OrderDate" visible="true" foreignKey="OrderDate" highCardinality="false">
     </DimensionUsage>
     <Measure name="Profit" column="OrderLineProfit" datatype="Numeric" formatString="Currency" aggregator="sum" visible="true">
     </Measure>
     <Measure name="Revenue" column="OrderLineTotal" datatype="Numeric" formatString="Currency" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="Quantity" column="OrderQuantity" datatype="Numeric" formatString="Currency" aggregator="sum" visible="true">
+    <Measure name="Quantity" column="OrderQuantity" datatype="Numeric" aggregator="sum" visible="true">
     </Measure>
     <Measure name="Discount" column="Discount" datatype="Numeric" formatString="Currency" aggregator="sum" visible="true">
     </Measure>
