@@ -34,16 +34,17 @@ CASE
     WHEN dm_product.ProductTopCategory = 4 AND dm_factsales.OrderQuantity >= 10 THEN 0.11
 END;
 
--- Updating OrderLineTotal & OrderLineProfit
+-- Updating OrderLineTotal
 UPDATE 
 dm_factsales
 INNER JOIN dm_product ON dm_factsales.productID = dm_product.productID
-SET
+SET OrderLineTotal = (OrderQuantity * UnitPrice - IFNULL(Discount, 0));
 
-OrderLineTotal = 
-(OrderQuantity * UnitPrice - IFNULL(Discount, 0)),
-OrderLineProfit = 
-(OrderLineTotal - OrderQuantity * StandardCost);
+-- Updating OrderLineProfit
+UPDATE 
+dm_factsales
+INNER JOIN dm_product ON dm_factsales.productID = dm_product.productID
+SET OrderLineProfit = (OrderLineTotal - OrderQuantity * StandardCost);
 
 -- Updating TaxAmount
 UPDATE
