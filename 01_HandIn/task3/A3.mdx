@@ -1,0 +1,5 @@
+SELECT
+	HIERARCHIZE(TAIL([OrderDate].[Month].MEMBERS, 24)) ON COLUMNS,
+	[Product].[TopCategory].MEMBERS ON ROWS
+FROM [bike_sales]
+WHERE Measures.[Profit]

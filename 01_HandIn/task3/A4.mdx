@@ -1,0 +1,13 @@
+WITH
+SET Top5Customers AS
+TOPCOUNT([Customer.Name].[Name].MEMBERS, 5, [Measures].[Profit])
+
+SET Top4Products AS
+GENERATE(
+	Top5Customers,
+	TOPCOUNT([Customer.Name].[Name].CURRENTMEMBER * [Product.Name].[Name].MEMBERS, 4, [Measures].[Quantity]))
+
+SELECT
+	[Measures].[Quantity] ON COLUMNS,
+	Top4Products ON ROWS
+FROM [bike_sales]

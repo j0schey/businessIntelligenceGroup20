@@ -1,0 +1,9 @@
+General:
+If the sort order of the query description matches with the default ordering of the resulting cube from the MDX query, then no explicit ordering is specified in the query.
+
+A5.sql:
+There are way more than 10 customers who share the maximum profit for the given time period, so the ordering of the 10 selected customers is left for the SQL engine to decide at execution time.
+
+B1.mdx:
+We assumed that "top 3 selling products" refers to the top 3 sold products measured in quantity.
+No sales for products of product top category 2 available, the results for product names are therefore in natural order.

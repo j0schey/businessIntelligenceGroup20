@@ -1,0 +1,11 @@
+WITH 
+
+SET Top3ProductsByTopCategory AS
+GENERATE(
+	[Product.ProductCategory].[TopCategory].MEMBERS,
+	TOPCOUNT([Product.ProductCategory].[TopCategory].CURRENTMEMBER * [Product.Name].[Name].MEMBERS, 3, [Measures].[Quantity]))
+
+SELECT 
+	[Measures].[Quantity] ON COLUMNS,
+	Top3ProductsByTopCategory ON ROWS
+FROM [bike_sales]
