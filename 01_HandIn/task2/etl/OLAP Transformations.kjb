@@ -369,7 +369,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\Transformation_DM_Time.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\etl\Transformation_DM_Time.sql</sqlfilename>
       <sendOneStatement>T</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -385,7 +385,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\Transformation_DM_Customer.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\etl\Transformation_DM_Customer.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -401,7 +401,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\Transformation_DM_Product.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\etl\Transformation_DM_Product.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -417,7 +417,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\Transformation_DM_Location.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\etl\Transformation_DM_Location.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -433,7 +433,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\Transformation_DM_Factsales.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\etl\Transformation_DM_Factsales.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -449,7 +449,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\Transformation_helptable_FreightCost.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\etl\Transformation_helptable_FreightCost.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>

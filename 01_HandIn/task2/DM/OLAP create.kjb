@@ -368,7 +368,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\DM\DM_Customer.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\DM\DM_Customer.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -384,7 +384,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\DM\DM_Location.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\DM\DM_Location.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -400,7 +400,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\DM\DM_Product.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\DM\DM_Product.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -416,7 +416,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\DM\DM_Time.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\DM\DM_Time.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>
@@ -432,7 +432,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task2\DM\DM_FactSales.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task2\DM\DM_FactSales.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_20</connection>
       <parallel>N</parallel>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <job>
   <name>OLTP create</name>
   <description />
@@ -348,7 +349,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_Customer.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_Customer.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -364,7 +365,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_Address.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_Address.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -380,7 +381,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_CustomerAddress.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_CustomerAddress.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -396,7 +397,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_Product.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_Product.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -412,7 +413,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_ProductCategory.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_ProductCategory.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -428,7 +429,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_SalesOrderDetail.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_SalesOrderDetail.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -444,7 +445,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_SalesOrderHeader.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_SalesOrderHeader.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -460,7 +461,7 @@
       <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>D:\TU\BusinessIntelligence\Handson1\task 1\oltp\TB_ShipMethod.sql</sqlfilename>
+      <sqlfilename>${basedirectory}\task1\oltp\TB_ShipMethod.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLTP_20</connection>
       <parallel>N</parallel>
@@ -499,42 +500,8 @@
       <xloc>624</xloc>
       <yloc>256</yloc>
     </entry>
-    <entry>
-      <name>Checks if files exist</name>
-      <description />
-      <type>FILES_EXIST</type>
-      <filename />
-      <fields>
-        <field>
-          <name>D:\TU\BusinessIntelligence\Handson1\task 1\oltp</name>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>144</xloc>
-      <yloc>32</yloc>
-    </entry>
   </entries>
   <hops>
-    <hop>
-      <from>START</from>
-      <to>Checks if files exist</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Checks if files exist</from>
-      <to>TB_ProductCategory</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>TB_ProductCategory</from>
       <to>TB_Product</to>
@@ -606,6 +573,15 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>TB_ProductCategory</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

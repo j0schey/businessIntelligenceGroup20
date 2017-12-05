@@ -529,7 +529,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>D:\TU\BusinessIntelligence\Handson1\OLTP data\OLTP data\Address.csv</filename>
+    <filename>${basedirectory}\OLTP data\Address.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -701,7 +701,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>D:\TU\BusinessIntelligence\Handson1\OLTP data\OLTP data\Customer.csv</filename>
+    <filename>${basedirectory}\OLTP data\Customer.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -933,7 +933,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>D:\TU\BusinessIntelligence\Handson1\OLTP data\OLTP data\ProductCategory.csv</filename>
+    <filename>${basedirectory}\OLTP data\ProductCategory.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -1108,7 +1108,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>D:\TU\BusinessIntelligence\Handson1\OLTP data\OLTP data\ShipMethod.csv</filename>
+    <filename>${basedirectory}\OLTP data\ShipMethod.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
