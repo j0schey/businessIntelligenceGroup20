@@ -1,0 +1,1 @@
+/opt/hadoop-2.9.0/bin/hadoop jar target/SentimentAmazon-1.0-SNAPSHOT.jar at.ac.tuwien.bi.g20.SentimentAmazon /home/joschey/amazon/input /home/joschey/amazon/output -pos pos-words.txt -neg neg-words.txt
