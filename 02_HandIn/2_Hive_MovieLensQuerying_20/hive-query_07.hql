@@ -1,0 +1,1 @@
+SELECT title, AVG(r.rating) AS avgRating, count(r.rating) AS numRatings FROM movies m INNER JOIN ratings r ON r.movieID = m.movieID GROUP BY m.title HAVING (numRatings > 500) ORDER BY avgRating DESC LIMIT 10; 

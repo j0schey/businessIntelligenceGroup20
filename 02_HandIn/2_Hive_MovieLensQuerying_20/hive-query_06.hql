@@ -1,0 +1,1 @@
+SELECT m.title, count(t.tag) AS numTags FROM movies m INNER JOIN tags t ON m.movieID = t.movieID WHERE t.tag = "sci-fi" GROUP BY m.title ORDER BY numTags DESC LIMIT 15; 

@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT userID, movieID) from ratings;

@@ -1,0 +1,2 @@
+CREATE VIEW moviesVienna AS SELECT gs.movieID, gs.relevance FROM genome_tags gt INNER JOIN genome_scores gs ON gt.tagID = gs.tagID WHERE gt.tag = 'vienna' ORDER BY gs.relevance DESC LIMIT 10;
+SELECT m.title, relevance FROM moviesVienna mv INNER JOIN movies m ON mv.movieID = m.movieID ORDER BY relevance DESC; 

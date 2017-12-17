@@ -1,0 +1,1 @@
+SELECT tag, count(tag) as numAppearance FROM tags GROUP BY tag ORDER BY numAppearance DESC LIMIT 10;

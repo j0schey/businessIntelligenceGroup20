@@ -1,0 +1,1 @@
+SELECT m.movieID, m.title, variance(r.rating) AS varRating FROM ratings r INNER JOIN movies m ON r.movieID = m.movieID WHERE FROM_UNIXTIME(r.datevalue) >= '2010-01-01 00:00:00' AND FROM_UNIXTIME(r.datevalue) <= '2010-12-31 23:59:59' GROUP BY m.movieID, m.title ORDER BY varRating DESC LIMIT 10;

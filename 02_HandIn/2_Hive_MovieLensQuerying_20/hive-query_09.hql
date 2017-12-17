@@ -1,0 +1,1 @@
+SELECT gt.tag, gs.relevance FROM genome_tags gt INNER JOIN genome_scores gs ON gt.tagID = gs.tagID WHERE gs.movieID=18 ORDER BY gs.relevance DESC LIMIT 15;
