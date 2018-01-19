@@ -1,9 +1,7 @@
 package bi;
 
 import java.io.*;
-import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -26,14 +24,14 @@ public class RandomGenerator
             String line = br.readLine(); //don't replace values on first line
             outputBuilder.append(line).append("\n");
             String[] firstLineAsArray = line.split(",");
-            List<Double> missingPercentages = createMissingPercentagesPerAttribute(firstLineAsArray.length -1);
-            System.out.println("Missing percentages: " + missingPercentages);
+            List<Double> availablePercentages = createAvailablePercentagesPerAttribute(firstLineAsArray.length -1);
+            System.out.println("Available percentages: " + availablePercentages);
             Random random = new Random(SEED);
 
             while ((line = br.readLine()) != null) {
                 String[] lineAsArray = line.split(",");
                 for(int i = 0; i < lineAsArray.length; i++ ) {
-                    if(i < missingPercentages.size() && random.nextDouble() <= missingPercentages.get(i)) {
+                    if(i < availablePercentages.size() && random.nextDouble() >= availablePercentages.get(i)) {
                         lineAsArray[i] = "?";
                     }
                 }
@@ -54,12 +52,12 @@ public class RandomGenerator
         }
     }
 
-    private static List<Double> createMissingPercentagesPerAttribute(int nrAttributes) {
+    private static List<Double> createAvailablePercentagesPerAttribute(int nrAttributes) {
         Random random = new Random(SEED_ATTRIBUTE_RANDOMS);
-        List<Double> missingPercentagesPerAttribute = new ArrayList<>();
+        List<Double> availablePercentagesPerAttribute = new ArrayList<>();
         for(int i = 0; i < nrAttributes; i++) {
-            missingPercentagesPerAttribute.add(random.nextDouble());
+            availablePercentagesPerAttribute.add(random.nextDouble());
         }
-        return missingPercentagesPerAttribute;
+        return availablePercentagesPerAttribute;
     }
 }
