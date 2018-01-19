@@ -1,0 +1,52 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     R_data_frame
+Instances:    10299
+Attributes:   562
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 54.03 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       10093               97.9998 %
+Incorrectly Classified Instances       206                2.0002 %
+Kappa statistic                          0.9759
+Mean absolute error                      0.0472
+Root mean squared error                  0.1059
+Relative absolute error                 17.0483 %
+Root relative squared error             28.464  %
+Total Number of Instances            10299     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,990    0,001    0,993      0,990    0,992      0,990    1,000     1,000     1
+                 0,990    0,004    0,978      0,990    0,984      0,981    1,000     0,999     2
+                 0,977    0,002    0,986      0,977    0,981      0,978    1,000     0,998     3
+                 0,958    0,008    0,963      0,958    0,960      0,952    0,999     0,993     4
+                 0,966    0,009    0,962      0,966    0,964      0,956    0,999     0,995     5
+                 0,999    0,000    0,999      0,999    0,999      0,999    1,000     1,000     6
+Weighted Avg.    0,980    0,004    0,980      0,980    0,980      0,976    0,999     0,997     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f   <-- classified as
+ 1705    9    8    0    0    0 |    a = 1
+    3 1529   12    0    0    0 |    b = 2
+    9   24 1373    0    0    0 |    c = 3
+    0    1    0 1702   72    2 |    d = 4
+    0    0    0   65 1841    0 |    e = 5
+    0    1    0    0    0 1943 |    f = 6
+
