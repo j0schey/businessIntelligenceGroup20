@@ -1,0 +1,53 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 3 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     R_data_frame
+Instances:    10299
+Attributes:   562
+              [list of attributes omitted]
+Test mode:    split 40.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 3 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 58.31 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5914               95.7113 %
+Incorrectly Classified Instances       265                4.2887 %
+Kappa statistic                          0.9484
+Mean absolute error                      0.0227
+Root mean squared error                  0.1088
+Relative absolute error                  8.2074 %
+Root relative squared error             29.2138 %
+Total Number of Instances             6179     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,999    0,003    0,984      0,999    0,991      0,990    1,000     1,000     1
+                 0,992    0,004    0,980      0,992    0,986      0,983    0,999     0,992     2
+                 0,969    0,000    0,999      0,969    0,983      0,981    0,997     0,995     3
+                 0,869    0,017    0,915      0,869    0,891      0,869    0,978     0,917     4
+                 0,925    0,028    0,887      0,925    0,906      0,883    0,983     0,925     5
+                 0,999    0,000    0,998      0,999    0,999      0,998    1,000     1,000     6
+Weighted Avg.    0,957    0,009    0,957      0,957    0,957      0,948    0,993     0,969     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f   <-- classified as
+ 1027    1    0    0    0    0 |    a = 1
+    7  941    1    0    0    0 |    b = 2
+   10   16  800    0    0    0 |    c = 3
+    0    2    0  942  138    2 |    d = 4
+    0    0    0   87 1079    0 |    e = 5
+    0    0    0    1    0 1125 |    f = 6
+

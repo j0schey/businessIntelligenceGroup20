@@ -1,0 +1,49 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 7 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     R_data_frame
+Instances:    10299
+Attributes:   562
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 7 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.07 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9967               96.7764 %
+Incorrectly Classified Instances       332                3.2236 %
+Kappa statistic                          0.9612
+Mean absolute error                      0.0228
+Root mean squared error                  0.096 
+Relative absolute error                  8.2198 %
+Root relative squared error             25.782  %
+Total Number of Instances            10299     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,999    0,002    0,991      0,999    0,995      0,994    1,000     1,000     1
+                 0,998    0,001    0,992      0,998    0,995      0,994    1,000     0,999     2
+                 0,984    0,000    0,998      0,984    0,991      0,989    1,000     0,999     3
+                 0,900    0,015    0,926      0,900    0,913      0,896    0,993     0,963     4
+                 0,934    0,020    0,914      0,934    0,924      0,907    0,993     0,969     5
+                 0,999    0,001    0,997      0,999    0,998      0,997    1,000     1,000     6
+Weighted Avg.    0,968    0,007    0,968      0,968    0,968      0,961    0,998     0,988     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f   <-- classified as
+ 1720    1    1    0    0    0 |    a = 1
+    1 1541    2    0    0    0 |    b = 2
+   15    8 1383    0    0    0 |    c = 3
+    0    3    0 1600  168    6 |    d = 4
+    0    0    0  125 1781    0 |    e = 5
+    0    0    0    2    0 1942 |    f = 6

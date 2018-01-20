@@ -1,0 +1,74 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     R_data_frame
+Instances:    10299
+Attributes:   562
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: 1, 2
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+...
+
+Number of kernel evaluations: 482966 (84.405% cached)
+
+Classifier for classes: 1, 3
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+...
+...
+
+Number of kernel evaluations: 113619 (76.005% cached)
+
+
+
+Time taken to build model: 26.54 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       10147               98.5241 %
+Incorrectly Classified Instances       152                1.4759 %
+Kappa statistic                          0.9822
+Mean absolute error                      0.2226
+Root mean squared error                  0.3107
+Relative absolute error                 80.3164 %
+Root relative squared error             83.4668 %
+Total Number of Instances            10299     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,999    0,000    0,999      0,999    0,999      0,999    1,000     0,998     1
+                 0,999    0,000    0,999      0,999    0,999      0,999    1,000     0,998     2
+                 0,999    0,000    0,999      0,999    0,999      0,999    1,000     0,999     3
+                 0,960    0,009    0,957      0,960    0,958      0,950    0,986     0,931     4
+                 0,960    0,008    0,963      0,960    0,961      0,953    0,992     0,945     5
+                 1,000    0,000    1,000      1,000    1,000      1,000    1,000     1,000     6
+Weighted Avg.    0,985    0,003    0,985      0,985    0,985      0,982    0,996     0,977     
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f   <-- classified as
+ 1720    1    1    0    0    0 |    a = 1
+    1 1543    0    0    0    0 |    b = 2
+    1    0 1405    0    0    0 |    c = 3
+    0    1    0 1706   70    0 |    d = 4
+    0    0    0   77 1829    0 |    e = 5
+    0    0    0    0    0 1944 |    f = 6
+
