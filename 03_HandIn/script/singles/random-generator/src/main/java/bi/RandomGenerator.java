@@ -17,7 +17,7 @@ import java.util.Random;
 public class RandomGenerator {
     private static String INPUT_FILENAME = "php88ZB4Q.arff";
 
-    private static String OUTPUT_FILENAME = "output.arff";
+    private static String OUTPUT_FILENAME = "output(smallMValuesOnHighInfoGain).arff";
 
     private static int SEED = 2;
 
@@ -25,8 +25,8 @@ public class RandomGenerator {
 
     private static Map<Integer, Double> createMissingPercentageForColumns() {
         Map<Integer, Double> missingPercentagesForColumns = new HashMap<>();
-        missingPercentagesForColumns.put(188, 0.7); //188 is index -> therefore it is the 189th column as index starts with 0
-        missingPercentagesForColumns.put(302, 0.8);
+//        missingPercentagesForColumns.put(188, 0.1); //188 is index -> therefore it is the 189th column as index starts with 0
+    missingPercentagesForColumns.put(302, 0.1);
         return missingPercentagesForColumns;
     }
 
