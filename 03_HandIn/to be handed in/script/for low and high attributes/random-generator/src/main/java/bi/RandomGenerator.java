@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * @author solomon
+ *
  */
 public class RandomGenerator {
     private static String INPUT_FILENAME = "php88ZB4Q.arff";
