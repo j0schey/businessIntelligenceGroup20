@@ -1,0 +1,10 @@
+Due to the fact that our dataset already consists of values in the interval [-1;1], the normalization to [0;1] has no impact on the overall results. Also the standardization of the training data, where a mean of 0 and a variance of 1 is achieved, shows no improvement on the results. We therefore concluded that no normalization or standardization is needed for our dataset.
+
+Correctly Classified Instances       10129               98.3494 %
+Incorrectly Classified Instances       170                1.6506 %
+Kappa statistic                          0.9801
+Mean absolute error                      0.2226
+Root mean squared error                  0.3109
+Relative absolute error                 80.3312 %
+Root relative squared error             83.5158 %
+Total Number of Instances            10299  
